@@ -1,14 +1,16 @@
 # Generating Adversarial Examples using Convex Programming in tensorflow
-This repository contains the tensorflow implementation our paper [here](https://arxiv.org/abs/1803.03607).
+This repository contains the tensorflow implementation of our paper: [On Generation of Adversarial Examples using Convex Programming](https://arxiv.org/abs/1803.03607).
 
 Citation:
 
-     @article{balda2017adversarialconvex,
-          title={On Generation of Adversarial Examples using Convex Programming},
-          author={Balda, Emilio Rafael and Behboodi, Arash and Mathar, Rudolf},
-          journal={arXiv preprint	arXiv:1803.03607},
-          year={2018}
-      }
+     @INPROCEEDINGS{balda2018adversarialconvex,
+       title={On Generation of Adversarial Examples using Convex Programming},
+       author={Emilio Rafael Balda  and Arash Behboodi and Rudolf Mathar},
+       booktitle={52th Asilomar Conference on Signals, Systems, and Computers},
+       year={2018},
+       month={Oct},
+       organization={IEEE}
+     } 
 
 ## Dependencies:
 
@@ -19,8 +21,8 @@ Citation:
 
 For benchmarking we use the following pre-trained models and datasets:
 
-* **MNIST dataset**: A fully connected network with two hidden layers of size $150$ and $100$ respectively (test error = 1.7\%), as well as the LeNet-$5$ architecture (test error = 0.9\%).
-* **CIFAR-10 dataset**:  The Network In Network (NIN) architecture (test error = 13.8\%), and a $40$ layer DenseNet (test error = 5.2\%).
+* **MNIST dataset**: A fully connected network with two hidden layers of size 150 and 100 respectively (test error = 1.7\%), as well as the LeNet-5 architecture (test error = 0.9\%).
+* **CIFAR-10 dataset**:  The Network In Network (NIN) architecture (test error = 13.8\%), and a 40 layer DenseNet (test error = 5.2\%).
 
 ## Usage
 
@@ -41,13 +43,13 @@ To compute the fooling ratio using the pretrained models use `main.py`. For exam
 python main.py --model2load=fcnn --n-images=1024 --max-epsilon=0.1
 ```
 ```
-python main.py --model2load=fcnn --n-images=1024 --max-epsilon=0.2
+python main.py --model2load=lenet --n-images=1024 --max-epsilon=0.2
 ```
 ```
-python main.py --model2load=fcnn --n-images=1024 --max-epsilon=0.03
+python main.py --model2load=nin --n-images=1024 --max-epsilon=0.03
 ```
 ```
-python main.py --model2load=fcnn --n-images=1024 --max-epsilon=0.01
+python main.py --model2load=densenet --n-images=1024 --max-epsilon=0.01
 ```
 ![result](resultingfigures.png)
 
